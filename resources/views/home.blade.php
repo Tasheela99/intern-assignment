@@ -12,27 +12,14 @@
                             <h2 class="title fs-2 fw-bold py-4">Add Product</h2>
                             @csrf
                             <input type="text" class="form-control mb-3" placeholder="Name" name="name"
-                                   value="{{ old('name') }}" required>
-                            @error('name')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-
+                                    required>
                             <textarea type="text" class="form-control mb-3" placeholder="Description" name="description"
                                       rows="4" required>{{ old('description') }}</textarea>
-                            @error('description')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
 
                             <input type="number" class="form-control mb-3" placeholder="Price" name="price"
-                                   value="{{ old('price') }}" required>
-                            @error('price')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                                   required>
 
                             <input type="file" class="form-control mb-3" placeholder="Image" name="image" required>
-                            @error('image')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
 
                             <button type="submit" class="btn btn-primary">Save Product</button>
                             <button type="reset" class="btn btn-danger">Cancel</button>
