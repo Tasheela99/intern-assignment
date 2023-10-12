@@ -11,17 +11,20 @@
                         <form action="/add-products-action" method="post" class="form" enctype="multipart/form-data">
                             <h2 class="title fs-2 fw-bold py-4">Add Product</h2>
                             @csrf
-                            <input type="text" class="form-control mb-3" placeholder="Name" name="name" value="{{ old('name') }}" required>
+                            <input type="text" class="form-control mb-3" placeholder="Name" name="name"
+                                   value="{{ old('name') }}" required>
                             @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
 
-                            <textarea type="text" class="form-control mb-3" placeholder="Description" name="description" rows="4" required>{{ old('description') }}</textarea>
+                            <textarea type="text" class="form-control mb-3" placeholder="Description" name="description"
+                                      rows="4" required>{{ old('description') }}</textarea>
                             @error('description')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
 
-                            <input type="number" class="form-control mb-3" placeholder="Price" name="price" value="{{ old('price') }}" required>
+                            <input type="number" class="form-control mb-3" placeholder="Price" name="price"
+                                   value="{{ old('price') }}" required>
                             @error('price')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -37,7 +40,7 @@
                         </form>
                     </div>
                 </div>
-                @if(count($pm) !== 0)
+                @if(count($productModal) !== 0)
                     <div class="card">
                         <div class="container">
                             <div class="row">
@@ -54,15 +57,17 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($pm as $item)
+                                        @foreach($productModal as $item)
                                             <tr>
-                                                <td><img src="product_image/{{ $item->image  }}" width="200"/></td>
-                                                <td>{{ $item->name  }}</td>
-                                                <td>{{ $item->description  }}</td>
-                                                <td>{{ $item->price  }}</td>
-                                                <td><a href="/update/{{$item->id}}" class="btn btn-success w-100">Update</a>
+                                                <td><img src="product_image/{{ $item->image}}" width="200"/></td>
+                                                <td>{{ $item->name}}</td>
+                                                <td>{{ $item->description}}</td>
+                                                <td>{{ $item->price}}</td>
+                                                <td><a href="/update/{{$item->id}}"
+                                                       class="btn btn-success w-100">Update</a>
                                                 </td>
-                                                <td><a href="/delete/{{$item->id}}" class="btn btn-danger w-100">Delete</a>
+                                                <td><a href="/delete/{{$item->id}}"
+                                                       class="btn btn-danger w-100">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -42,8 +42,8 @@ class ProductController extends Controller
 
     public function update($productID)
     {
-        $pm =  ProductsModel::where(["id"=>$productID])->first();
-        return view('update', compact('pm'));
+        $productModal =  ProductsModel::where(["id"=>$productID])->first();
+        return view('update', compact('productModal'));
     }
 
 

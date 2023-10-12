@@ -24,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pm =  ProductsModel::all();
-        return view('home', compact('pm'));
+        $productModal =  ProductsModel::all();
+        return view('home', compact('productModal'));
     }
 
     public function updateRoute(){
