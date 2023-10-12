@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        @if(Route::has('update'))
+                        @if(Route::currentRouteName() == 'update')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('home')}}">{{ __('Home') }}</a>
                             </li>
